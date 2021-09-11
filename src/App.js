@@ -1,24 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import Crud from './components/Crud';
+import {AppProvider} from '@8base/app-provider';
 
 function App() {
+
+const ENDPOINT_URL = 'https://api.8base.com/cktd6hfg7003a09ik3nt5c3zi';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppProvider uri={ENDPOINT_URL} >
+      <div className="App">
+        <Crud/>
+      </div>
+    </AppProvider>
   );
 }
 
